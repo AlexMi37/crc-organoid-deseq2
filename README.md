@@ -1,6 +1,9 @@
 CRC organoid DESeq2 analysis
+
 This repository contains the DESeq2 analysis script and gene-level result tables.
+
 Analysis
+
 Bulk RNA-seq data from patient-derived colorectal cancer organoids were analyzed across five culture conditions and three patients, with one sample for each patient–condition combination.
 Differential expression was calculated from raw integer counts using the paired design:
 design = ~ patient + condition
