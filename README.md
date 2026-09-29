@@ -1,4 +1,4 @@
-CRC organoid DESeq2 analysis
+# CRC organoid DESeq2 analysis
 
 This repository contains the DESeq2 analysis script and gene-level result tables.
 
@@ -13,28 +13,35 @@ Log2 fold changes were additionally shrunk using apeglm with apeMethod = "nbinom
 
 For downstream interpretation:
 
-•	pvalue and padj were taken from the *_raw.tsv tables;
+-	pvalue and padj were taken from the *_raw.tsv tables;
 
-•	effect sizes were taken from log2FoldChange in the *_lfcShrink_apeglm.tsv tables.
+-	effect sizes were taken from log2FoldChange in the *_lfcShrink_apeglm.tsv tables.
 
 The result tables use Ensembl gene identifiers.
 
 Repository contents
 
-•	scripts/run_deseq2.R - DESeq2 analysis script.
+-	scripts/run_deseq2.R - DESeq2 analysis script.
 
-•	results/deseq2/*_raw.tsv - unshrunken DESeq2 results containing Wald statistics, P values and adjusted P values.
+  Condition codes used in the output filenames:
 
-•	results/deseq2/*_lfcShrink_apeglm.tsv - results containing apeglm-shrunken log2 fold changes.
+`no_pp` — medium without PP;
+`no_nog` — medium without Noggin;
+`no_rspo` — medium without R-spondin;
+`no_nog_rspo` — medium without both Noggin and R-spondin.
+
+-	results/*_raw.tsv - unshrunken DESeq2 results containing Wald statistics, P values and adjusted P values.
+
+-	results/*_lfcShrink_apeglm.tsv - results containing apeglm-shrunken log2 fold changes.
 Software environment
 
 The supplied results were generated using:
 
-•	R 4.5.1
+-	R 4.5.1
 
-•	DESeq2 1.48.2
+-	DESeq2 1.48.2
 
-•	apeglm 1.30.0
+-	apeglm 1.30.0
 
 Small numerical differences in apeglm-shrunken estimates may occur when using different package or runtime versions.
 
